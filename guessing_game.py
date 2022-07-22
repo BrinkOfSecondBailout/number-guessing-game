@@ -1,5 +1,6 @@
 import random
 
+scores = []
 player_name = input("What is your name, Player 1?  ")
 print("Welcome to the matrix, {}. Step up to the challenge!".format(player_name))
 
@@ -7,7 +8,9 @@ def start_game():
 
     attempts = 0
     random_number = random.randint(1, 10)
-
+    
+    if scores:
+        print("The current highest score is {}. Try to beat it!".format(min(scores)))
     try:
         guess = int(input("Please guess a number between 1 and 10!  "))
     except ValueError:
@@ -23,6 +26,9 @@ def start_game():
             print("You got it {}! Great job!".format(player_name))
             attempts += 1
             print("It took you {} attempts to guess the correct answer!".format(attempts))
+            scores.append(attempts)
+            if attempts == min(scores):
+                print("Congrats! You have the current highest score of {} attempts!".format(attempts))
             play_again = input("Would you like to play again? Y/N  ")
             if play_again.lower() == "y":
                 start_game()
