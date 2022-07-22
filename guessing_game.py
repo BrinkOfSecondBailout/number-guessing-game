@@ -7,7 +7,6 @@ def start_game():
 
     attempts = 0
     random_number = random.randint(1, 10)
-    print(random_number)
 
     try:
         guess = int(input("Please guess a number between 1 and 10!  "))
