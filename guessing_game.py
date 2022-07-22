@@ -12,6 +12,10 @@ def start_game():
         guess = int(input("Please guess a number between 1 and 10!  "))
     except ValueError:
         guess = int(input("Please use a VALID number between 1 and 10!  "))
+    if guess == 0:
+        guess = int(input("Oops! Zero isn't a valid choice. We won't count this towards your attempts. Please choose a number between 1 and 10!  "))
+    if guess > 10:
+        guess = int(input("Oops! That number is higher than 10. We won't count this towards your attempts. Please choose a number between 1 and 10!  "))
 
     while True:
 
