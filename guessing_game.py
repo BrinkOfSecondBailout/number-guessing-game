@@ -23,8 +23,12 @@ def start_game():
             print("You got it {}! Great job!".format(player_name))
             attempts += 1
             print("It took you {} attempts to guess the correct answer!".format(attempts))
-            print("Have a wonderful day and thank you for playing, {}!".format(player_name))
-            break
+            play_again = input("Would you like to play again? Y/N  ")
+            if play_again.lower() == "y":
+                start_game()
+            elif play_again.lower() == "n":
+                print("Have a wonderful day and thank you for playing, {}!".format(player_name))
+                quit()
         elif guess < random_number:
             guess = int(input("It's lower than the solution! Try again!  "))
             attempts += 1
