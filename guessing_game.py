@@ -32,12 +32,15 @@ def start_game():
                 scores.append(attempts)
                 if attempts == min(scores):
                     print("Congrats! You have the current highest score of {} attempts!".format(attempts))
-                play_again = input("Would you like to play again? Y/N  ")
-                if play_again.lower() == "y":
-                    start_game()
-                elif play_again.lower() == "n":
-                    print("Have a wonderful day and thank you for playing, {}!".format(player_name))
-                    quit()
+                while True:
+                    play_again = input("Would you like to play again? Y/N  ")
+                    if play_again.lower() == "y":
+                        start_game()
+                    elif play_again.lower() == "n":
+                        print("Have a wonderful day and thank you for playing, {}!".format(player_name))
+                        quit()
+                    else:
+                        print("Please enter 'Y' for Yes and 'N' for No.")
             elif guess < random_number:
                 guess = int(input("It's lower than the solution! Try again!  "))
                 attempts += 1
