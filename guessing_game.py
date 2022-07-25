@@ -22,9 +22,9 @@ def start_game():
     while True:
         try:
             if guess == 0:
-                guess = int(input("Oops! Zero isn't a valid choice. We won't count this towards your attempts. Please choose a number between 1 and 10!  "))
+                guess = int(input("We won't count this towards your attempts. Please choose a number between 1 and 10!  "))
             elif guess > 10:
-                guess = int(input("Oops! That number is higher than 10. We won't count this towards your attempts. Please choose a number between 1 and 10!  "))
+                guess = int(input("We won't count this towards your attempts. Please choose a number between 1 and 10!  "))
             elif guess == random_number:
                 print("You got it {}! Great job!".format(player_name))
                 attempts += 1
@@ -47,6 +47,6 @@ def start_game():
                 attempts += 1
                 continue
         except ValueError:
-            print("Oops! That was not valid! Please try again!")        
+            print("Oops! That was not valid! Please try again!")
 
 start_game()
